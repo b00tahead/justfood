@@ -407,7 +407,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p {
-	margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 0.750em
 }
 
 dfn, cite, em, i {
@@ -982,4 +983,107 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## Site Header
+--------------------------------------------------------------*/
+.site-header {
+  background-color: #274F5B;
+  padding: 20px 40px 0 40px;
+  text-align: center;
+  border-bottom: 2px solid #F9A45E;
+  margin-bottom: 40px;
+}
+
+.main-navigation {
+  padding: 0;
+}
+
+.main-navigation .navbar-toggler {
+  border-width: 0;
+  padding: 20px 0;
+}
+
+.main-navigation span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px;
+  margin-bottom: 5px;
+}
+
+.main-navigation span:last-child {
+  margin-bottom: 0;
+}
+
+#primary-menu {
+  width: 50%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+#primary-menu > .menu-item {
+  position: relative;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  
+}
+
+#primary-menu .menu-item {
+  background-color: #199C8E;
+  border-bottom: 2px solid #274F5B;
+  height: 40px;
+  line-height: 40px;
+  width: 100vw;
+}
+
+#primary-menu > .menu-item:first-child {
+  border-top: 2px solid #F9A45E;
+}
+
+#primary-menu .menu-item a {
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .8px;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+
+/*--------------------------------------------------------------
+## Basic Pages
+--------------------------------------------------------------*/
+.entry-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #333333;
+  font-size: 1.5em;
+  padding: 0 40px;
+  margin: 0 0 20px 0;
+}
+
+.entry-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #333333;
+  font-size: 1.125em;
+  margin: 40px 0 20px 0;
+}
+
+.entry-content {
+  padding: 0 40px;
+}
+
+.entry-content p {
+  line-height: 1.75;
+}
+
+.entry-content .wp-block-separator {
+  background-color: #FED86F;
+  height: 2px;
 }
