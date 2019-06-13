@@ -395,7 +395,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #333333;
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -404,11 +404,42 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
 	clear: both;
+	margin-bottom: 0.625em;
+}
+
+h1 {
+	margin-top: 0;
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	font-size: 2em;
+}
+
+h2 {
+	/* margin-bottom: 1.250em; */
+	font-family: 'Playfair Display', serif;
+	font-weight: 700;
+	font-size: 1.500em;
+}
+
+h3 {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	font-size: 1.125em;
+}
+
+h4 {
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 0.875em;
 }
 
 p {
-  margin-bottom: 1.5em;
-  font-size: 0.750em
+	font-family: 'Raleway', sans-serif;
+  margin-bottom: 1.250em;
+	font-size: 0.875em;
+	letter-spacing: 0.031em;
+	line-height: 1.75;
 }
 
 dfn, cite, em, i {
@@ -1058,32 +1089,6 @@ object {
 /*--------------------------------------------------------------
 ## Basic Pages
 --------------------------------------------------------------*/
-.entry-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: #333333;
-  font-size: 1.5em;
-  padding: 0 40px;
-  margin: 0 0 20px 0;
-}
-
-.entry-content h2 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  color: #333333;
-  font-size: 1.125em;
-  margin: 40px 0 20px 0;
-}
-
-.entry-content {
-  padding: 0 40px;
-}
-
-.entry-content p {
-  line-height: 1.75;
-}
-
-.entry-content .wp-block-separator {
-  background-color: #FED86F;
-  height: 2px;
+.site-content {
+	padding: 0 40px;
 }
