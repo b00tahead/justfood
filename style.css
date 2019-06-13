@@ -411,7 +411,7 @@ h1 {
 	margin-top: 0;
 	font-family: 'Playfair Display', serif;
 	font-weight: 700;
-	font-size: 2em;
+	font-size: 1.750em;
 }
 
 h2 {
@@ -506,14 +506,21 @@ body {
 }
 
 hr {
-	background-color: #ccc;
+	background-color: #FED86F;
 	border: 0;
-	height: 1px;
-	margin-bottom: 1.5em;
+	height: 2px;
+	margin-bottom: 1.250em;
+}
+
+.wp-block-separator.is-style-dots:before {
+	color: #274F5B;
 }
 
 ul, ol {
-	margin: 0 0 1.5em 3em;
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.750em;
+	letter-spacing: 0.031em;
+	margin: 0 0 1.5em 1em;
 }
 
 ul {
@@ -553,6 +560,83 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+
+.wp-block-pullquote {
+	font-family: 'Raleway', sans-serif;
+}
+
+
+.wp-block-quote p,
+.wp-block-pullquote p {
+	font-size: 1em;
+	font-weight: 700;
+	color: #E66045;
+	margin-top: 1.250em;
+}
+
+.wp-block-quote.is-style-large p {
+	font-family: 'Playfair Display', serif;
+}
+
+.wp-block-quote.is-style-large cite {
+	font-family: 'Raleway', sans-serif;
+	font-weight: 700;
+	font-size: 0.875em;
+	letter-spacing: 0.047em;
+}
+
+.wp-block-pullquote blockquote:before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	content: "\f10d";
+	color: #E66045;
+	font-size: 2.500em;
+}
+
+.wp-block-quote cite,
+.wp-block-pullquote blockquote cite {
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.750em;
+	letter-spacing: 0.047em;
+}
+
+.wp-block-quote p {
+	margin-bottom: 0.625em;
+}
+
+.wp-block-table {
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.750em;
+	letter-spacing: 0.031em;
+}
+
+.wp-block-table tr {
+	height: 60px;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	padding: 10px;
+}
+
+.wp-block-table.is-style-stripes {
+	font-family: 'Playfair Display', serif;
+	font-weight: 400;
+	font-size: 1.125em;
+	letter-spacing: 1px;
+	color: #274F5B;
+	border-color: rgba(25, 156, 142, 0.1);
+}
+
+.wp-block-table.is-style-stripes em {
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.625em;
+	font-weight: 500;
+}
+
+.wp-block-table.is-style-stripes tr:nth-child(odd) {
+	background-color: rgba(25, 156, 142, 0.3);
 }
 
 /*--------------------------------------------------------------
@@ -637,6 +721,25 @@ select {
 
 textarea {
 	width: 100%;
+}
+
+.wp-block-button {
+	font-family: 'Raleway', sans-serif;
+}
+
+.wp-block-button.is-style-outline {
+	color: #E66045;
+}
+
+.wp-block-button a {
+	font-size: 0.750em;
+	letter-spacing: 0.075em;
+	padding: 20px 40px;
+	background: #E66045;
+}
+
+.wp-block-button.is-style-outline a {
+	border-color: #E66045;
 }
 
 /*--------------------------------------------------------------
@@ -966,6 +1069,16 @@ object {
 	text-align: center;
 }
 
+.wp-block-image {
+	margin-bottom: 1.250em;
+}
+
+.wp-block-image figcaption {
+	font-family: 'Raleway', sans-serif;
+	font-size: 0.750em;
+	letter-spacing: 0.063em;
+}
+
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
@@ -1014,6 +1127,10 @@ object {
 
 .gallery-caption {
 	display: block;
+}
+
+.wp-block-gallery {
+	margin-left: 0;
 }
 
 /*--------------------------------------------------------------
