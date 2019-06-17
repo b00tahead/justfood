@@ -43,11 +43,20 @@ if ( ! function_exists( 'justfood_posted_by' ) ) :
 		$byline = sprintf(
 			/* translators: %s: post author. */
 			esc_html_x( 'by %s', 'post author', 'justfood' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+			'<span class="author vcard">' . esc_html( get_the_author() ) . '</span>'
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 
+	}
+endif;
+
+if ( ! function_exists( 'justfood_get_author_image' ) ) :
+	/**
+	 * Prints author's profile image.
+	 */
+	function justfood_get_author_image() {
+		echo get_avatar( get_the_author_meta( 'ID' ) );
 	}
 endif;
 
