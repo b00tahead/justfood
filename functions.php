@@ -124,7 +124,7 @@ function justfood_scripts() {
 	
 	wp_enqueue_style( 'justfood-style', get_stylesheet_uri() );
 
-	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:500,700&display=swap');
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:400,500,700&display=swap');
 
 	wp_enqueue_script( 'justfood-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
