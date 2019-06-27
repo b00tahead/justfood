@@ -12,7 +12,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   
   <div class="blog-category-title">
-    <p class="post-category"><?php the_category(', '); ?></p>
+    <?php if ( 'post' === get_post_type() ) :?>
+      <p class="post-category"><?php the_category(', '); ?></p>
+    <?php elseif ( 'event' === get_post_type() ) :?>
+    <p class="post-category"><?php justfood_get_event_date(); ?></p>
+    <?php endif ?>
+
+  
     <header class="entry-header">
       <?php
       if ( is_singular() ) :
