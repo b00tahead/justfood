@@ -60,6 +60,23 @@ if ( ! function_exists( 'justfood_get_author_image' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'justfood_get_event_date' ) ) :
+	/**
+	 * Prints date of event.
+	 */
+	function justfood_get_event_date() {
+		echo get_field( "event_date" );
+		$start_time = get_field( "event_start_time" );
+		$end_time = get_field( "event_end_time" );
+		if ( $start_time ) {
+			echo ' &middot; ' . $start_time;
+			if ( $end_time ) {
+				echo ' to ' . $end_time;
+			}
+		}
+	}
+endif;
+
 if ( ! function_exists( 'justfood_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
