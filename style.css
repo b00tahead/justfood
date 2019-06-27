@@ -406,6 +406,7 @@ textarea {
 Mobile
 h1: 28px = 1.750em
 h2: 24px = 1.500em
+h3: 18px = 1.125em
 p:  14px = 0.875em
 
 */
@@ -433,9 +434,24 @@ h2 {
 }
 
 h3 {
-	font-family: 'Raleway', sans-serif;
+	font-family: 'Playfair Display', serif;
 	font-weight: 500;
 	font-size: 1.125em;
+	position: relative;
+	margin-bottom: 30px;
+	font-weight: 700;
+	letter-spacing: .75px;
+}
+h3:after {
+	content: "";
+	display: block;
+	height: 2px;
+	width: 10%;
+	background-color: #E66045;
+	position: absolute;
+	bottom: -10px;
+	z-index: 1;
+
 }
 
 h4 {
@@ -521,7 +537,8 @@ hr {
 	background-color: #FED86F;
 	border: 0;
 	height: 2px;
-	margin-bottom: 1.250em;
+	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
 .wp-block-separator.is-style-dots:before {
@@ -1016,6 +1033,7 @@ a:hover, a:active {
 	letter-spacing: 0.031em;
 }
 
+.post-category,
 .post-category a,
 .post-category a:visited,
 .post-category a:hover,
@@ -1230,7 +1248,7 @@ object {
 
 
 /*--------------------------------------------------------------
-## Basic Pages
+## Custom CSS
 --------------------------------------------------------------*/
 .blog-category-title,
 .blog-author-date,
