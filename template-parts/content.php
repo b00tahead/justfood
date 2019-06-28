@@ -30,7 +30,12 @@
     </div><!-- .blog-category-title -->
 
     <div class="blog-featured-image">
-	    <?php justfood_post_thumbnail(); ?>
+        <?php if ('speaker' === get_post_type()): ?>
+            <img alt="<?php the_title(); ?>" src="<?php echo get_field('speaker_image'); ?>">
+        <?php else: 
+            justfood_post_thumbnail();
+        endif; ?>
+        
     </div><!-- .blog-featured-image -->
 
     <?php if ( 'post' === get_post_type() ) :?>
