@@ -47,7 +47,7 @@
         </div><!-- .blog-author-date -->
     <?php endif; ?>
 
-    <?php if ( 'event' === get_post_type() ) :?>
+    <?php if ( 'event' === get_post_type() && have_rows('speakers') ) :?>
         <div class="event-speakers">
             <h3>Speakers</h3>
             <div class="speaker-circles">
