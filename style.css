@@ -1369,3 +1369,16 @@ object {
 	border-radius: 50%;
 	margin-right: 10px;
 }
+
+.site-footer {
+	background-color: #274F5B;
+	border-top: 2px solid #F9A45E;
+}
+
+.menu-social li a[href*="facebook.com"]::before { content: '\f082'; }
+.menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
+.menu-social li a[href*="twitter.com"]::before { content: '\f081'; }
+.menu-social  a:link {text-decoration: none;}
+.menu-social  a:visited {text-decoration: none;}
+.menu-social a:hover { text-decoration: none;}
+.menu-social  a:active { text-decoration: none;}
