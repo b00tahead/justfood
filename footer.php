@@ -14,19 +14,27 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'justfood' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'justfood' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'justfood' ), 'justfood', '<a href="http://underscores.me/">Scott May</a>' );
-				?>
-		</div><!-- .site-info -->
+		<div id="footer-section-1">
+			<?php
+				if(is_active_sidebar('footer-1')){
+				dynamic_sidebar('footer-1');
+				}
+			?>
+		</div>
+		<div id="footer-section-2">
+			<?php
+				if(is_active_sidebar('footer-2')){
+				dynamic_sidebar('footer-2');
+				}
+			?>
+		</div>
+		<div id="footer-section-3">
+			<?php
+				if(is_active_sidebar('footer-3')){
+				dynamic_sidebar('footer-3');
+				}
+			?>
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

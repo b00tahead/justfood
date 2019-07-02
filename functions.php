@@ -45,6 +45,7 @@ if ( ! function_exists( 'justfood_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'justfood' ),
+			'social' => esc_html__( 'Social Links Menu', 'justfood' ),
 		) );
 
 		/*
@@ -113,6 +114,39 @@ function justfood_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+
+	// Register Footer Section One
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Section One', 'justfood' ),
+		'id'            => 'footer-1',
+		'description'   => esc_html__( 'Appears in the footer area.', 'justfood' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	// Register Footer Section Two
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Section Two', 'justfood' ),
+		'id'            => 'footer-2',
+		'description'   => esc_html__( 'Appears in the footer area.', 'justfood' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	// Register Footer Section Three
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Section Three', 'justfood' ),
+		'id'            => 'footer-3',
+		'description'   => esc_html__( 'Appears in the footer area.', 'justfood' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'justfood_widgets_init' );
 
@@ -125,12 +159,13 @@ function justfood_scripts() {
 	wp_enqueue_style( 'justfood-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:400,500,700&display=swap');
+	wp_enqueue_style( 'justfood-fontawesome', get_template_directory_uri() . '/css/fontawesome.css' );
 
 	wp_enqueue_script( 'justfood-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'justfood-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'font-awesome-js', 'https://kit.fontawesome.com/5468524873.js');
+	
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
