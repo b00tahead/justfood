@@ -14,27 +14,25 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div id="footer-section-1">
-			<?php
-				if(is_active_sidebar('footer-1')){
-				dynamic_sidebar('footer-1');
-				}
-			?>
-		</div>
-		<div id="footer-section-2">
-			<?php
-				if(is_active_sidebar('footer-2')){
-				dynamic_sidebar('footer-2');
-				}
-			?>
-		</div>
-		<div id="footer-section-3">
-			<?php
-				if(is_active_sidebar('footer-3')){
-				dynamic_sidebar('footer-3');
-				}
-			?>
-		</div>
+		<div class="container-fluid">
+			<div class="row">
+				<?php if(is_active_sidebar('footer-1')): ?>
+					<div id="footer-section-1" class="col-12">
+						<?php dynamic_sidebar('footer-1'); ?>
+					</div>
+				<?php endif ?>
+				<?php if(is_active_sidebar('footer-2')): ?>
+					<div id="footer-section-2" class="col-12">
+						<?php dynamic_sidebar('footer-2'); ?>
+					</div>
+				<?php endif ?>
+				<?php if(is_active_sidebar('footer-3')): ?>
+					<div id="footer-section-3" class="col-12">
+						<?php dynamic_sidebar('footer-3'); ?>
+					</div>
+				<?php endif ?>
+			</div>
+
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
