@@ -13,9 +13,9 @@
   
     <div class="blog-category-title">
         <?php if ( 'post' === get_post_type() ) :?>
-        <p class="post-category"><?php the_category(', '); ?></p>
+            <p class="post-category"><?php the_category(', '); ?></p>
         <?php elseif ( 'event' === get_post_type() ) :?>
-        <p class="post-category"><?php justfood_get_event_date(); ?></p>
+            <p class="post-category"><?php justfood_get_event_date(); ?></p>
         <?php endif ?>
 
         <header class="entry-header">
@@ -88,11 +88,13 @@
         get_the_title()
       ) );
 
-    //   wp_link_pages( array(
-    //     'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'justfood' ),
-    //     'after'  => '</div>',
-    //   ) );
-      ?>
+      if ( 'event' === get_post_type() && get_field('parking_instructions') ) :?>
+
+        <h3>Parking Instructions</h3>
+        <p><?php echo get_field('parking_instructions'); ?></p>
+
+    <?php endif; ?>
+
     </div><!-- .entry-content -->
   </div><!-- .blog-content -->
 
