@@ -88,15 +88,13 @@
         get_the_title()
       ) );
 
-      wp_link_pages( array(
-        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'justfood' ),
-        'after'  => '</div>',
-      ) );
+    //   wp_link_pages( array(
+    //     'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'justfood' ),
+    //     'after'  => '</div>',
+    //   ) );
       ?>
     </div><!-- .entry-content -->
   </div><!-- .blog-content -->
 
-	<footer class="entry-footer">
-		<?php justfood_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+	
 </article><!-- #post-<?php the_ID(); ?> -->
