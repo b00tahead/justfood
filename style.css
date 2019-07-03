@@ -1478,65 +1478,68 @@ object {
 .site-header .navbar-nav .nav-item {
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
-	text-transform: uppercase;
 	letter-spacing: 0.5px;
-	background-color: #199C8E;
-	border-bottom: 2px solid #274F5B;
+	text-transform: uppercase;
 }
 
-.site-header .navbar-nav {
-	margin-left: 0;
-}
-
-.site-header .navbar-collapse {
-	/* margin-top: 20px; */
-}
-
-.site-header .navbar-nav .nav-item:first-child {
-	border-top: 2px solid #F9A45E;
-}
-
-.site-header .navbar-nav .nav-item:last-child {
-	border-bottom-width: 0;
-}
-
-.site-header .navbar-nav .nav-link {
-	text-align: center;
-}
-
-.site-header .navbar-nav .dropdown-menu {
-	padding: 0;
-	background-color: transparent;
-	border-radius: 0;
-	border-width: 0;
-	background-clip: unset;
-	width: 100vw;
-}
-
-.site-header .navbar-nav .dropdown-menu .nav-item {
-	font-size: 10px;
-	background-color: #E66045;
+@media only screen and (max-width: 768px) {
+	.site-header .navbar-nav .nav-item {
+		background-color: #199C8E;
+		border-bottom: 2px solid #274F5B;
+	}
 	
+	.site-header .navbar-nav {
+		margin-left: 0;
+	}
+	
+	.site-header .navbar-nav .nav-item:first-child {
+		border-top: 2px solid #F9A45E;
+	}
+	
+	.site-header .navbar-nav .nav-item:last-child {
+		border-bottom-width: 0;
+	}
+	
+	.site-header .navbar-nav .nav-link {
+		text-align: center;
+	}
+	
+	.site-header .navbar-nav .dropdown-menu {
+		padding: 0;
+		background-color: transparent;
+		border-radius: 0;
+		border-width: 0;
+		background-clip: unset;
+		width: 100vw;
+	}
+	
+	.site-header .navbar-nav .dropdown-menu .nav-item {
+		font-size: 10px;
+		background-color: #E66045;
+		
+	}
+	
+	.site-header .navbar-nav .dropdown-menu .nav-item:last-child {
+		border-bottom-width: 0;
+	}
+	
+	.site-header .navbar-nav .dropdown-menu .nav-item:first-child {
+		border-top: 2px solid #274F5B;
+	}
+	
+	.site-header .navbar-nav .dropdown-menu .dropdown-item {
+		color: #ffffff;
+		text-align: center;
+		padding: 10px;
+		white-space: normal;
+	}
+	
+	.site-header .navbar-nav .dropdown-menu .dropdown-item:hover {
+		background-color: transparent;
+	}
 }
 
-.site-header .navbar-nav .dropdown-menu .nav-item:last-child {
-	border-bottom-width: 0;
-}
 
-.site-header .navbar-nav .dropdown-menu .nav-item:first-child {
-	border-top: 2px solid #274F5B;
-}
-
-.site-header .navbar-nav .dropdown-menu .dropdown-item {
-	color: #ffffff;
-	text-align: center;
-	padding: 10px;
-	white-space: normal;
-}
-
-.site-header .navbar-nav .dropdown-menu .dropdown-item:hover {
-	background-color: transparent;
-}
 
 @media only screen and (min-width: 768px) {
 	.blog-category-title,
