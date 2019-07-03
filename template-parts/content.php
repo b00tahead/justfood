@@ -62,9 +62,9 @@
                 if( $posts ): 
                     foreach( $posts as $post): // variable must be called $post (IMPORTANT)
                         setup_postdata($post); ?>
-                        <a href="<?php the_permalink(); ?>">
-                            <img class="event-speaker" src="<?php echo get_field('speaker_image', $post->ID); ?>" alt="<?php the_title(); ?>">
-                        </a>
+                            <a href="<?php the_permalink(); ?>">
+                                <img class="event-speaker" src="<?php echo get_field('speaker_image', $post->ID); ?>" alt="<?php the_title(); ?>">
+                            </a>
                     <?php endforeach; ?>
                     <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
                 <?php endif; ?>
