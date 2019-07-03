@@ -7,6 +7,9 @@
  * @package Just_Food
  */
 
+// Register Custom Navigation Walker
+require_once get_template_directory() . '/wp_bootstrap_navwalker.php';
+
 if ( ! function_exists( 'justfood_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -150,6 +153,68 @@ function justfood_widgets_init() {
 }
 add_action( 'widgets_init', 'justfood_widgets_init' );
 
+class CSS_Menu_Walker extends Walker {
+
+	var $db_fields = array('parent' => 'menu_item_parent', 'id' => 'db_id');
+
+	// echo 'hello world';
+	
+	function start_lvl(&$output, $depth = 0, $args = array()) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "\n$indent<ul>\n";
+	}
+	
+	function end_lvl(&$output, $depth = 0, $args = array()) {
+		$indent = str_repeat("\t", $depth);
+		$output .= "$indent</ul>\n";
+	}
+	
+	function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+	
+		global $wp_query;
+		$indent = ($depth) ? str_repeat("\t", $depth) : '';
+		$class_names = $value = '';
+		$classes = empty($item->classes) ? array() : (array) $item->classes;
+		
+		/* Add active class */
+		if (in_array('current-menu-item', $classes)) {
+			$classes[] = 'active';
+			unset($classes['current-menu-item']);
+		}
+		
+		/* Check for children */
+		$children = get_posts(array('post_type' => 'nav_menu_item', 'nopaging' => true, 'numberposts' => 1, 'meta_key' => '_menu_item_menu_item_parent', 'meta_value' => $item->ID));
+		if (!empty($children)) {
+			$classes[] = 'has-sub';
+		}
+		
+		$class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+		$class_names = $class_names ? ' class="' . esc_attr($class_names) . '"' : '';
+		
+		$id = apply_filters('nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args);
+		$id = $id ? ' id="' . esc_attr($id) . '"' : '';
+		
+		$output .= $indent . '<li' . $id . $value . $class_names .'>';
+		
+		$attributes  = ! empty($item->attr_title) ? ' title="'  . esc_attr($item->attr_title) .'"' : '';
+		$attributes .= ! empty($item->target)     ? ' target="' . esc_attr($item->target    ) .'"' : '';
+		$attributes .= ! empty($item->xfn)        ? ' rel="'    . esc_attr($item->xfn       ) .'"' : '';
+		$attributes .= ! empty($item->url)        ? ' href="'   . esc_attr($item->url       ) .'"' : '';
+		
+		$item_output = $args->before;
+		$item_output .= '<a'. $attributes .'><span>';
+		$item_output .= $args->link_before . apply_filters('the_title', $item->title, $item->ID) . $args->link_after;
+		$item_output .= '</span></a>';
+		$item_output .= $args->after;
+		
+		$output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
+	}
+	
+	function end_el(&$output, $item, $depth = 0, $args = array()) {
+		$output .= "</li>\n";
+	}
+}
+
 /**
  * Enqueue scripts and styles.
  */
@@ -159,11 +224,17 @@ function justfood_scripts() {
 	wp_enqueue_style( 'justfood-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Raleway:400,500,700&display=swap');
+
 	wp_enqueue_style( 'justfood-fontawesome', get_template_directory_uri() . '/css/fontawesome.css' );
+
+	wp_enqueue_script( 'jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js', array('json2'), '1.12.4', true );
+
+	wp_enqueue_script( 'bs_js', 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', array(), null, true );
 
 	wp_enqueue_script( 'justfood-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'justfood-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
 
 	
 

@@ -25,37 +25,95 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'justfood' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
+		<nav class="navbar navbar-expand-lg navbar-dark bg-blue">
+			<div class="site-branding">
+				<?php
+				the_custom_logo();
+				if ( is_front_page() && is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
+					<?php
+				else :
+					?>
+					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php
+				endif;
+				$justfood_description = get_bloginfo( 'description', 'display' );
+				if ( $justfood_description || is_customize_preview() ) :
+					?>
+					<p class="site-description"><?php echo $justfood_description; /* WPCS: xss ok. */ ?></p>
+				<?php endif; ?>
+			</div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<i class="fas fa-bars"></i>
+			</button>
+			<?php
+				wp_nav_menu( array(
+					'theme_location'  => 'menu-1',
+					'depth'	          => 2, // 1 = no dropdowns, 2 = with dropdowns.
+					'container'       => 'div',
+					'container_class' => 'collapse navbar-collapse',
+					'container_id'    => 'navbarSupportedContent',
+					'menu_class'      => 'navbar-nav mr-auto',
+					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
+					'walker'          => new WP_Bootstrap_Navwalker(),
+				) );
+			?>
+			
+
+			<!-- 
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Link</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Dropdown
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">Action</a>
+							<a class="dropdown-item" href="#">Another action</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#">Something else here</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+					</li>
+				</ul>
+			</div> -->
+		</nav>	
+	</header>
+	
+<!--
+	<header id="masthead" class="site-header">
+		<div class="site-branding">
+			<?php
+			//the_custom_logo();
+			//if ( is_front_page() && is_home() ) :
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+				<h1 class="site-title"><a href="<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a></h1>
 				<?php
-			endif;
-			$justfood_description = get_bloginfo( 'description', 'display' );
-			if ( $justfood_description || is_customize_preview() ) :
+			//else :
 				?>
-				<p class="site-description"><?php echo $justfood_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+				<p class="site-title"><a href="<?php //echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a></p>
+				<?php
+			//endif;
+			//$justfood_description = get_bloginfo( 'description', 'display' );
+			//if ( $justfood_description || is_customize_preview() ) :
+				?>
+				<p class="site-description"><?php //echo $justfood_description; /* WPCS: xss ok. */ ?></p>
+			<?php //endif; ?>
+		</div>--><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation navbar" role="navigation">
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span></span>
-			<span></span>
-			<span></span>
+			
 		</button>
-		<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
+		
 		
 			
 		</nav><!-- #site-navigation -->

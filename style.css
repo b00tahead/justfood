@@ -1181,10 +1181,10 @@ object {
 ## Site Header
 --------------------------------------------------------------*/
 .site-header {
-  background-color: #274F5B;
+  /* background-color: #274F5B;
   padding: 20px 40px 0 40px;
   text-align: center;
-  border-bottom: 2px solid #F9A45E;
+  border-bottom: 2px solid #F9A45E; */
   /* margin-bottom: 40px; */
 }
 
@@ -1210,7 +1210,7 @@ object {
   margin-bottom: 0;
 }
 
-#primary-menu {
+/* #primary-menu {
   width: 50%;
   max-width: 800px;
   margin: 0 auto;
@@ -1244,7 +1244,7 @@ object {
   letter-spacing: .8px;
   color: #ffffff;
   text-transform: uppercase;
-}
+} */
 
 
 /*--------------------------------------------------------------
@@ -1443,4 +1443,95 @@ object {
 	letter-spacing: 0.75px;
 	padding: 10px;
 	width: 100px;
+}
+
+.site-branding img {
+	height: 60px;
+	width: auto;
+	margin-left: 40px;
+
+}
+
+.site-header .bg-blue {
+	background-color: #274F5B;
+	border-bottom: 2px solid #F9A45E;
+}
+
+.site-header .navbar {
+	padding: 0;
+	padding-top: 20px;
+}
+
+.site-header .navbar-toggler,
+.site-branding img {
+	margin-bottom: 20px;
+}
+
+.site-header .navbar-toggler {
+	border-color: transparent;
+	color: #ffffff;
+	margin-right: 40px;
+}
+
+.site-header .navbar-nav .nav-item {
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	background-color: #199C8E;
+	border-bottom: 2px solid #274F5B;
+}
+
+.site-header .navbar-nav {
+	margin-left: 0;
+}
+
+.site-header .navbar-collapse {
+	/* margin-top: 20px; */
+}
+
+.site-header .navbar-nav .nav-item:first-child {
+	border-top: 2px solid #F9A45E;
+}
+
+.site-header .navbar-nav .nav-item:last-child {
+	border-bottom-width: 0;
+}
+
+.site-header .navbar-nav .nav-link {
+	text-align: center;
+}
+
+.site-header .navbar-nav .dropdown-menu {
+	padding: 0;
+	background-color: transparent;
+	border-radius: 0;
+	border-width: 0;
+	background-clip: unset;
+	width: 100vw;
+}
+
+.site-header .navbar-nav .dropdown-menu .nav-item {
+	font-size: 10px;
+	background-color: #E66045;
+	
+}
+
+.site-header .navbar-nav .dropdown-menu .nav-item:last-child {
+	border-bottom-width: 0;
+}
+
+.site-header .navbar-nav .dropdown-menu .nav-item:first-child {
+	border-top: 2px solid #274F5B;
+}
+
+.site-header .navbar-nav .dropdown-menu .dropdown-item {
+	color: #ffffff;
+	text-align: center;
+	padding: 10px;
+	white-space: normal;
+}
+
+.site-header .navbar-nav .dropdown-menu .dropdown-item:hover {
+	background-color: transparent;
 }
