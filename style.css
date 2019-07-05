@@ -1377,14 +1377,16 @@ object {
 	text-align: center;
 	color: #ffffff;
 	font-family: 'Raleway', sans-serif;
-	padding-top: 40px;
+	padding: 40px;
 }
 
-.site-footer #footer-section-1,
-.site-footer #footer-section-2,
-.site-footer #footer-section-3 {
+.site-footer .footer-section {
 	margin-bottom: 40px;
-	padding: 0 40px;
+	/* padding: 0 40px; */
+}
+
+.site-footer .footer-section:last-child {
+	margin-bottom: 0;
 }
 
 .site-footer img {
@@ -1546,13 +1548,40 @@ object {
 	.blog-author-date,
 	.blog-content,
 	.page-content,
-	.event-speakers {
+	.event-speakers,
+	.site-footer {
 		padding: 0 100px;
+	}
+
+	.site-footer {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.site-footer h4,
+	.site-footer p {
+		text-align: left;
 	}
 
 	.post-thumbnail img {
 		max-height: 395px !important;
 		object-fit: none;
   	object-position: center;
+	}
+}
+
+@media (min-width: 1200px){
+	.blog-category-title,
+	.blog-author-date,
+	.blog-content,
+	.page-content,
+	.event-speakers,
+	.site-footer {
+		padding: 0 240px;
+	}
+
+	.site-footer {
+		padding-top: 40px;
+		padding-bottom: 40px;
 	}
 }
