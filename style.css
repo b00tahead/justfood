@@ -1497,6 +1497,26 @@ object {
 	}
 }
 
+.siteorigin-panels-home .entry-header {
+	display: none;
+}
+
+.siteorigin-panels-home .page-content,
+.siteorigin-panels-home .entry-content {
+	margin-top: 0;
+}
+
+.body-button .ow-button-base a {
+	font-size: 12px;
+}
+
+.ow-button-base a {
+	border-radius: 500px !important;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 500;
+	font-size: 10px;
+	letter-spacing: 1px;
+}
 
 
 @media only screen and (min-width: 768px) {
