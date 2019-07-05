@@ -54,7 +54,7 @@
 					'container'       => 'div',
 					'container_class' => 'collapse navbar-collapse',
 					'container_id'    => 'navbarSupportedContent',
-					'menu_class'      => 'navbar-nav mr-auto',
+					'menu_class'      => 'navbar-nav ml-auto justfood-menu',
 					'fallback_cb'     => 'WP_Bootstrap_Navwalker::fallback',
 					'walker'          => new WP_Bootstrap_Navwalker(),
 				) );
